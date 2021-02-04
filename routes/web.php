@@ -21,6 +21,6 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/GroupCreate', [\App\Http\Controllers\GroupController::class, 'index']);
+Route::resource('/GroupCreate', \App\Http\Controllers\GroupController::class);
 
 //Route::get('/welcome', [\App\Http\Controllers\WelcomeController::class, 'about']);
