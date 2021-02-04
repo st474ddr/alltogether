@@ -11,4 +11,10 @@ class GroupController extends Controller
     {
         return view('GroupCreate');
     }
+
+    public function store(Request $request)
+    {
+        $request;
+        return '111';
+    }
 }
