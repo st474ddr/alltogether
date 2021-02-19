@@ -20,7 +20,7 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <p class="font-bold text-white text-xl">艱辛討論攤</p>
+                    <p class="font-bold text-white text-xl"><a href="{{ url('/') }}">艱辛討論攤</a></p>
                 </div>
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">

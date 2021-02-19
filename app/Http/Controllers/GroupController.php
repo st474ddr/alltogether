@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class GroupController extends Controller
 {
@@ -14,7 +16,11 @@ class GroupController extends Controller
 
     public function store(Request $request)
     {
-        $request;
-        return '111';
+        $validatedData = $request->validate([
+            'topic' => ['required', 'max:100'],
+            'reservation_date' => ['required','date'],
+        ]);
+        $group = Group::created($request->all());
+        return response($group, Response::HTTP_CREATED);
     }
 }

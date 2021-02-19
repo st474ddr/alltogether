@@ -11,7 +11,7 @@
                 </div>
                 <div class="flex flex-col mb-4">
                     <label for="reservation_date" class="mb-2 font-bold text-lg text-gray-700">揪團日期</label>
-                    <input type="text" name="reservation_date" class="border-2 py-2 px-3 text-gray-400">
+                    <input type="text" name="reservation_date" class="border-2 py-2 px-3 text-gray-400" autocomplete="off">
                 </div>
                 <div class="flex flex-wrap flex-row mb-4">
                     <label for="reservation_time" class="w-full mb-2 font-bold text-lg text-gray-700">時段</label>
@@ -35,7 +35,17 @@
                 <button type="submit"
                         class="block bg-green-500 hover:bg-green-400 text-white text-lg mx-auto p-4 rounded">發出揪團
                 </button>
+                @if ($errors->any())
+                    <div class="text-red-600">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </form>
         </div>
     </div>
+
 @endsection
