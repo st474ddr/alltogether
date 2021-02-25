@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('root');
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::resource('/GroupCreate', \App\Http\Controllers\GroupController::class);
+Route::resource('/group/create', \App\Http\Controllers\GroupController::class);
 
 //Route::get('/welcome', [\App\Http\Controllers\WelcomeController::class, 'about']);
