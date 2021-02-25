@@ -17,8 +17,8 @@ class CreateGroupsTable extends Migration
             $table->id();
             $table->string('topic');
             $table->date('reservation_date');
-            $table->date('reservation_time');
-            $table->text('remark');
+            $table->string('reservation_time');
+            $table->text('remark')->nullable();
             $table->timestamps();
         });
     }
