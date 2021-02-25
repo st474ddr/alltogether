@@ -25,7 +25,7 @@
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="{{ url('/GroupCreate') }}"
+                        <a href="{{ url('/group/create') }}"
                            class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">我要揪團</a>
                         <a href="#"
                            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
@@ -69,7 +69,7 @@
     <div class="hidden sm:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="{{ url('/GroupCreate') }}" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">我要揪團</a>
+            <a href="{{ url('group.create') }}" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">我要揪團</a>
             <a href="#"
                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
         </div>
