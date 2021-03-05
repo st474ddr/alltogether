@@ -13,13 +13,13 @@ class GroupController extends Controller
     public function index()
     {
         $groupPosts = Group::latest()->paginate(5);
-        return view('group.create', ['groupPosts' => $groupPosts]);
+        return view('index', ['groupPosts' => $groupPosts]);
     }
 
     public function store(Request $request)
     {
        $request->validate([
-            'topic' => ['required', 'max:100'],
+            'topic' => ['required', 'max:20'],
             'reservation_date' => ['required','date'],
             'reservation_time' => ['required']
         ]);

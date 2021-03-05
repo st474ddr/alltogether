@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\GroupController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('root');
+Route::get('/',  [GroupController::class, 'index'])->name('root');
 
 Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::resource('/group/create', \App\Http\Controllers\GroupController::class);
+Route::resource('/group/create', GroupController::class)->except('get');
+Route::get('/group/create', function (){
+    return view('group.create');
+});
 
 //Route::get('/welcome', [\App\Http\Controllers\WelcomeController::class, 'about']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
