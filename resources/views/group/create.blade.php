@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-    <div class="flex items-center h-screen w-full bg-green-300">
+    <div class="flex justify-center items-center pt-5 w-full bg-green-300">
         <div class="w-full border-2 bg-white rounded shadow-lg p-8 m-2 md:max-w-3xl md:mx-auto">
             <h1 class="block w-full text-3xl text-center text-gray-700 mb-6">揪團頁面</h1>
             <form class="mb-6" method="post" action="{{ url('group/create') }}">

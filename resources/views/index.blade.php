@@ -17,6 +17,7 @@
                     </div>
                 </div>
             @endforeach
+            {{ $groupPosts->links() }}
         </div>
     </div>
     <div class="sidebar">
