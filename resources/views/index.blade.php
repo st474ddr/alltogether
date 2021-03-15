@@ -2,26 +2,56 @@
 @section('title','艱辛討論攤')
 @section('content')
     @if(session()->has('notice'))
-        <div class="bg-pink-300 px-3 py-2 rounded">
+        <div class="bg-green-300 px-3 py-2 rounded">
             {{ session()->get('notice') }}
         </div>
     @endif
-    <div class="body">
-        <h1 class="text-4xl font-bold">現 正 揪 團 中</h1>
-        <div class="space-y-4 border-t-4 border-green-500">
+    <div class="container mx-auto flex flex-wrap py-6">
+
+        <!-- Posts Section -->
+        <section class="w-full md:w-2/3 flex flex-col items-center px-3">
             @foreach($groupPosts as $groupPost)
-                <div class="block mb-1.5 mt-1.5 border-b-2 border-gray-300" @click="">
-                    <h3 class="font-bold text-2xl"> {{ $groupPost->topic }} </h3>
-                    <div>
-                        {{ $groupPost->reservation_date }}
+                <article class="flex flex-col shadow my-4 min-w-full">
+                    <div class="bg-white flex flex-col justify-start p-6">
+                        <span class="text-blue-700 text-s font-bold bg-blue-100 pb-4 text-blue-500">吃飯</span>
+                        <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ $groupPost->topic }}</a>
+                        <p href="#" class="text-sm pb-3">
+                            由 <a href="#" class="font-semibold hover:text-gray-800">{{ $groupPost->user }}</a> 於 {{ $groupPost->created_at }}發表
+                        </p>
                     </div>
-                </div>
+                </article>
             @endforeach
-            {{ $groupPosts->links() }}
-        </div>
+
+            <!-- Pagination -->
+            <div class="flex items-center py-8">
+                {{ $groupPosts->links() }}
+            </div>
+
+        </section>
+
+        <!-- Sidebar Section -->
+        <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+
+            <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                <p class="text-xl font-semibold pb-5">About Us</p>
+                <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+                    Get to know us
+                </a>
+            </div>
+
+            <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                <p class="text-xl font-semibold pb-5">Instagram</p>
+                <div class="grid grid-cols-3 gap-3">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1">
+                </div>
+                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
+                    <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb
+                </a>
+            </div>
+
+        </aside>
+
     </div>
-    <div class="sidebar">
-        <br>
-    </div>
-    <div class="clearfix"></div>
+
 @endsection
