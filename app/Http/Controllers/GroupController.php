@@ -16,6 +16,12 @@ class GroupController extends Controller
         return view('index', ['groupPosts' => $groupPosts]);
     }
 
+    public function show($id)
+    {
+        $groupPost = Group::find($id);
+        return view('group.show', compact('groupPost'));
+    }
+
     public function store(Request $request)
     {
        $request->validate([

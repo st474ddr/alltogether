@@ -11,9 +11,10 @@
         <!-- Posts Section -->
         <section class="w-full md:w-2/3 flex flex-col items-center px-3">
             @foreach($groupPosts as $groupPost)
-                <article class="flex flex-col shadow my-4 min-w-full">
-                    <div class="bg-white flex flex-col justify-start p-6">
-                        <span class="text-blue-700 text-s font-bold bg-blue-100 pb-4 text-blue-500">吃飯</span>
+                <article class=" shadow my-4 min-w-full">
+                    <div class="bg-white  p-6">
+                        <a href="#" class="group text-s font-bold bg-blue-100 text-blue-500">吃飯</a>
+                        <br>
                         <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ $groupPost->topic }}</a>
                         <p href="#" class="text-sm pb-3">
                             由 <a href="#" class="font-semibold hover:text-gray-800">{{ $groupPost->user }}</a> 於 {{ $groupPost->created_at }}發表

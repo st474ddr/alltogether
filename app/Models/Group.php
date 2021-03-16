@@ -15,4 +15,9 @@ class Group extends Model
         'reservation_time',
         'remark'
     ];
+
+    public function users()
+    {
+        return $this->belongsTo('App\Model\User');
+    }
 }

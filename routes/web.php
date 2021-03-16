@@ -19,7 +19,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::resource('/group/create', GroupController::class)->except('get');
+Route::resource('/group', GroupController::class)->except('get');
 Route::get('/group/create', function (){
     return view('group.create');
 });
